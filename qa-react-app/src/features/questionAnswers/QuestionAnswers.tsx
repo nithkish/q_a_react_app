@@ -93,7 +93,7 @@ export function QuestionAnswers() {
                 )
               ) : (
                 <div className="ques-ans-error-box">
-                  No question available!!!
+                  All Questions Removed!!!
                 </div>
               )}
             </div>
