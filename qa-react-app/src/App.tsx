@@ -1,3 +1,4 @@
+import React from "react";
 import { QuestionAnswers } from './features/questionAnswers/QuestionAnswers';
 import './App.css';
 

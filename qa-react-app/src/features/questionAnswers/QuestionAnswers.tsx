@@ -1,6 +1,7 @@
+import React from "react";
 import { useEffect, useState } from "react";
-import AccordianItem from "../../components/AccordianItem";
-import AddModal from "../../components/Modals/AddModal";
+import AccordianItem from "../../common/components/Accordian/AccordianItem";
+import AddModal from "../../common/components/Modals/AddModal";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
   addSorting,
@@ -8,7 +9,7 @@ import {
   questionsData,
   resetAll,
 } from "./questionAnswersSlice";
-import ToolTip from "../../components/ToolTip";
+import ToolTip from "../../common/components/ToolTip/ToolTip";
 import "./index.css";
 
 export function QuestionAnswers() {
