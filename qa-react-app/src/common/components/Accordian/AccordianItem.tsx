@@ -26,22 +26,24 @@ function AccordianItem({ id, question, answer }: AccordianProps) {
   return (
     <>
       <div className="ques-ans-box">
-        <h4 className="question" onClick={() => setCollapse(!collapse)}>
+        <h4 data-testid="question" className="question" onClick={() => setCollapse(!collapse)}>
           {question}
           <img
+            data-testid="edit-icon"
             className="edit"
             src={`${process.env.PUBLIC_URL}assets/images/edit-24.png`}
             alt="Edit Icon"
             onClick={handleEdit}
-          />
+            />
           <img
+            data-testid="delete-icon"
             className="delete"
             src={`${process.env.PUBLIC_URL}assets/images/trash-24.png`}
             alt="Delete Icon"
             onClick={handleRemove}
           />
         </h4>
-        {collapse && <div className="answer">{answer}</div>}
+        {collapse && <div data-testid="answer" className="answer">{answer}</div>}
         {isModal && <EditModal id={id} handler={setIsModal} />}
         {isDeleteModal && <DeleteModal id={id} handler={setIsDeleteModal} />}
       </div>

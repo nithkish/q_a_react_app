@@ -19,6 +19,7 @@ function AddModal({ handler }: AddModalProps) {
   };
   const [formData, setFormData] = useState(formInitialValue);
   const [isDelay, setIsDelay] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const questions = useAppSelector(questionsData);
 
@@ -27,16 +28,21 @@ function AddModal({ handler }: AddModalProps) {
   };
 
   const addNewQuestion = () => {
-    if (isDelay) {
-      setTimeout(() => {
-        dispatch(addQuestion({ ...formData, id: questions.length }));
-      }, 5000);
-      setFormData(formInitialValue);
-      handler(false);
+    setShowError(false);
+    if (formData["question"].length === 0 || formData["answer"].length === 0) {
+      setShowError(true);
     } else {
-      dispatch(addQuestion({ ...formData, id: questions.length }));
-      setFormData(formInitialValue);
-      handler(false);
+      if (isDelay) {
+        setTimeout(() => {
+          dispatch(addQuestion({ ...formData, id: questions.length }));
+        }, 5000);
+        setFormData(formInitialValue);
+        handler(false);
+      } else {
+        dispatch(addQuestion({ ...formData, id: questions.length }));
+        setFormData(formInitialValue);
+        handler(false);
+      }
     }
   };
 
@@ -45,10 +51,12 @@ function AddModal({ handler }: AddModalProps) {
       <div className="modal">
         <div className="modal-header">
           <ToolTip
+            data-testid="header"
             label={"Create Question & Answer"}
             text={"Here you can create new question and answer."}
           />
           <img
+            data-testid="close-icon"
             src={`${process.env.PUBLIC_URL}assets/images/close-20.png`}
             alt="Close Icon"
             onClick={() => handler(false)}
@@ -86,6 +94,11 @@ function AddModal({ handler }: AddModalProps) {
             Create
           </button>
         </div>
+        {showError && (
+          <div data-testid="error-message" className="error-message">
+            Question/Answer cannot be Empty!
+          </div>
+        )}
       </div>
       <div className="modal-backdrop"></div>
     </>

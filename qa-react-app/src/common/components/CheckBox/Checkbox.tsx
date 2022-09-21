@@ -11,8 +11,8 @@ function Checkbox({ label, name, onChange }:CheckboxProps) {
 
   return (
     <div className="input-container">
-      <div className="custom-checkbox" onClick={() => (null !== ref.current)?ref.current.click():""}>
-        <input ref={ref} name={name} type="checkbox" onChange={onChange} />
+      <div data-testid="checkbox-div" className="custom-checkbox" onClick={() => (null !== ref.current)?ref.current.click():""}>
+        <input data-testid="checkbox" ref={ref} name={name} type="checkbox" onChange={onChange} />
         <span></span>
         <label>{label}</label>
       </div>

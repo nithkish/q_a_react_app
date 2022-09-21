@@ -13,6 +13,7 @@ interface EditModalProps {
   handler: (flag: boolean) => void;
 }
 function EditModal({ id, handler }: EditModalProps) {
+  const [showError, setShowError] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const questions = useAppSelector(questionsData);
   const question = questions.find((question) => question.id == id);
@@ -27,9 +28,14 @@ function EditModal({ id, handler }: EditModalProps) {
   };
 
   const editQuestion = () => {
-    dispatch(saveQuestion({ ...formData, id: id }));
-    setFormData(formInitialValue);
-    handler(false);
+    setShowError(false);
+    if (formData["question"].length === 0 || formData["answer"].length === 0) {
+      setShowError(true);
+    } else {
+      dispatch(saveQuestion({ ...formData, id: id }));
+      setFormData(formInitialValue);
+      handler(false);
+    }
   };
 
   return (
@@ -73,6 +79,11 @@ function EditModal({ id, handler }: EditModalProps) {
             Save
           </button>
         </div>
+        {showError && (
+          <div data-testid="error-message" className="error-message">
+            Question/Answer cannot be Empty!
+          </div>
+        )}
       </div>
       <div className="modal-backdrop"></div>
     </>

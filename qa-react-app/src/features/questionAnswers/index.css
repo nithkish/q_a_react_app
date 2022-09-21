@@ -255,6 +255,7 @@ header h1 {
 
 .input-container .custom-checkbox {
   display: flex;
+  max-width:40%;
 }
 
 .input-container .custom-checkbox input {
@@ -349,10 +350,18 @@ header h1 {
 }
 
 .modal-footer {
-  padding: 20px 36px 30px;
+  padding: 20px 36px 25px;
   display: flex;
   gap: 20px;
   justify-content: center;
+}
+
+.error-message{
+  display: flex;
+  padding-bottom: 25px;
+  justify-content: center;
+  color: #ff4c4c;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 991px) {
