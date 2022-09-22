@@ -33,7 +33,7 @@ export function QuestionAnswers() {
         <div className="wrapper">
           <aside>
             <div>
-              <p>
+              <p data-testid="side-text">
                 Here you can find{" "}
                 <b>{questions.length > 0 ? questions.length : "no"}</b>{" "}
                 question. Feel free to create your own question!
@@ -50,6 +50,7 @@ export function QuestionAnswers() {
               />
               <div className="form-header-buttons">
                 <button
+                  data-testid="sort-button"
                   className="button button-small"
                   onClick={() => dispatch(addSorting(!isSort))}
                 >
@@ -62,6 +63,7 @@ export function QuestionAnswers() {
                   />
                 </button>
                 <button
+                  data-testid="remove-all-button"
                   className="button button-small"
                   onClick={() => dispatch(resetAll())}
                 >
@@ -72,6 +74,7 @@ export function QuestionAnswers() {
                   />
                 </button>
                 <button
+                  data-testid="create-button"
                   className="button button-small button-primary"
                   onClick={() => setIsModal(true)}
                 >
