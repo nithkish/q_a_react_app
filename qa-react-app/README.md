@@ -49,7 +49,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-To install all the dependencies.This should be the first step post cloning the repositary.
+To install all the dependencies.This should be the first step post cloning the repository.
 
 ### `npm start`
 
@@ -60,7 +60,7 @@ The page will reload if you make edits.
 
 ### `npm run test`
 
-Triggers the complete test suite of the application created using react-testing-library
+Triggers the complete test suite of the application created using react-testing-library. Jest command is used in the script.
 
 ### `npm run build`
 
