@@ -6,8 +6,10 @@ Front End responsive single page application oriented to display and create Ques
 
 - [Technologies used](#technologies-used)
 - [Testing](#testing)
-
+- [Project Structure](#project-structure)
 - [Available Scripts](#available-scripts)
+- [Functionality](#functionality)
+- [Todo](#todo)
 
 ## Technologies used
 
@@ -31,7 +33,7 @@ The project mainly consists of two folders
 
  ![Alt text](public/assets/screens/src.png "Folder Structure")
 
- __mocks__ : contain the files needed for jest library for mocking css.
+ mocks : contain the files needed for jest library for mocking css.
  app: contains the store and hooks
  common: folder is used for keeping common components, utilities which can be re-used for different features.
    - all reusable components are kept inside the components folder and respective unit test files are present.
@@ -108,10 +110,13 @@ Similarly clicking on delete button opens up a prompt which ask for confirmation
 
 The page is designed taking into consideration of responsiveness. The application is compatible both in mobile as well as tab screens.
 
+Mobile Screen
 ![Alt text](public/assets/screens/mobile.png "Mobile")
+
   
-  
+IPad Screen
 ![Alt text](public/assets/screens/ipad.png "IPad")
+
 
 ## TODO
 
