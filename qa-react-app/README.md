@@ -33,11 +33,11 @@ The project mainly consists of two folders
 
  ![Alt text](public/assets/screens/src.png "Folder Structure")
 
- mocks : contain the files needed for jest library for mocking css.
- app: contains the store and hooks
- common: folder is used for keeping common components, utilities which can be re-used for different features.
+  - mocks : contain the files needed for jest library for mocking css.
+  - app: contains the store and hooks
+  - common: folder is used for keeping common components, utilities which can be re-used for different features.
    - all reusable components are kept inside the components folder and respective unit test files are present.
-features: folder consisits of the main feature component. The component consist of the Slice file, the component file, the functional unit test case file and the css file.
+  - features: folder consisits of the main feature component. The component consist of the Slice file, the component file, the functional unit test case file and the css file.
 
 The css for feature component consists all the styling for common components as its is a small application. For Bigger application it is recommended to keep the css separate with the components.
 
@@ -110,11 +110,13 @@ Similarly clicking on delete button opens up a prompt which ask for confirmation
 
 The page is designed taking into consideration of responsiveness. The application is compatible both in mobile as well as tab screens.
 
-Mobile Screen
+### Mobile Screen
+
 ![Alt text](public/assets/screens/mobile.png "Mobile")
 
   
-IPad Screen
+### IPad Screen
+
 ![Alt text](public/assets/screens/ipad.png "IPad")
 
 
