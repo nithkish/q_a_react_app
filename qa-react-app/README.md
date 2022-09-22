@@ -47,6 +47,10 @@ Other root files like App.tsx, index.tsx are kept inside the src folder.
 
 In the project directory, you can run:
 
+### `npm install`
+
+To install all the dependencies.This should be the first step post cloning the repositary.
+
 ### `npm start`
 
 Runs the app in the development mode.\
