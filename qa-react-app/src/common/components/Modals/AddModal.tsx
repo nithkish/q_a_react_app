@@ -8,10 +8,20 @@ import {
   addQuestion,
 } from "../../../features/questionAnswers/questionAnswersSlice";
 import ToolTip from "../ToolTip/ToolTip";
+import PropTypes from "prop-types";
 
 interface AddModalProps {
   handler: (flag: boolean) => void;
 }
+
+/**
+ * Functional react component for Create new Q/A modal
+ * @description used where new Question and Answer need to be created,
+ * takes question and answer as input through the form, contains a checkbox to add delay.
+ * @param {*} { handler } - to handle closing and opening of the modal
+ * @return {*} JSX
+ */
+
 function AddModal({ handler }: AddModalProps) {
   const formInitialValue = {
     question: "",
@@ -104,5 +114,9 @@ function AddModal({ handler }: AddModalProps) {
     </>
   );
 }
+
+AddModal.propTypes = {
+  handler: PropTypes.func.isRequired,
+};
 
 export default AddModal;

@@ -7,11 +7,20 @@ import {
   saveQuestion,
 } from "../../../features/questionAnswers/questionAnswersSlice";
 import ToolTip from "../ToolTip/ToolTip";
+import PropTypes from "prop-types";
 
 interface EditModalProps {
   id: number;
   handler: (flag: boolean) => void;
 }
+
+/**
+ * Functional react component for Editing specific questions/answers
+ * @description used as a form modal to edit the selected the Q/A,
+ * taking the modal handler and id of Q/A object as the input props.
+ * @param {*} { handler, id }
+ * @return {*} JSX
+ */
 function EditModal({ id, handler }: EditModalProps) {
   const [showError, setShowError] = useState<boolean>(false);
   const dispatch = useAppDispatch();
@@ -89,5 +98,10 @@ function EditModal({ id, handler }: EditModalProps) {
     </>
   );
 }
+
+EditModal.propTypes = {
+  handler: PropTypes.func.isRequired,
+  id:PropTypes.number.isRequired
+};
 
 export default EditModal;

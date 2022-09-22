@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export interface TextAreaProps {
   label: string;
@@ -6,6 +7,13 @@ export interface TextAreaProps {
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   value: string;
 }
+
+/**
+ * Re-usable Functional react component for Text Area
+ * @description used where a text area is needed in a form
+ * @param {*} { label, name, onChange, value }
+ * @return {*} JSX 
+ */
 
 function TextArea({ label, name, onChange, value }: TextAreaProps) {
   return (
@@ -15,5 +23,13 @@ function TextArea({ label, name, onChange, value }: TextAreaProps) {
     </div>
   );
 }
+
+TextArea.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
 
 export default TextArea;

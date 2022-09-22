@@ -12,6 +12,12 @@ import {
 import ToolTip from "../../common/components/ToolTip/ToolTip";
 import "./index.css";
 
+/**
+ * Functional react parent component for Question and answers page
+ * @description to display the complete application with all the functionlity
+ * @return {*} JSX
+ */
+
 export function QuestionAnswers() {
   const [isModal, setIsModal] = useState(false);
 
